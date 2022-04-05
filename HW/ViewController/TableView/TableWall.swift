@@ -9,51 +9,63 @@
 import UIKit
 
 class TableWall: UITableViewController {
-
-        
-    let images = (1...14).map{ UIImage(named: String($0))! } //задаем массив с закрытым диапазоном и извлекаем изображение
+  
+  // MARK: -  Переменные
+  private var photoItems = [PhotoItem]()
+  
+  // MARK: -  Методы
+  //Переопределение основного метода (конструктор)
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-
-    override func viewDidLoad() { //выполняем переопределение
-        super.viewDidLoad()
-        setupTableView() //делаем сетап
+    //Настройка главной таблицы
+    setupTableView()
+    //Загрузка данных из сети
+    PhotoItem.fetchDataFromWeb(handler: decodeData)
+  }
+  
+  //Запуск декодирования данных из сети
+  func decodeData(data: Data) {
+    if let photoItems = PhotoItem.decodeDataToPhotoItems(data: data) {
+      self.photoItems = photoItems
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+      }
     }
+  }
+  
+  //Настройка + заполнение таблицы
+  private func setupTableView() {
+    tableView.allowsSelection = false
+    tableView.separatorColor = .clear// очищаем полоску разделитель между ячейками
     
-    private func setupTableView() {
-        tableView.allowsSelection = false
-        tableView.separatorColor = .clear
-        
-        let nib = UINib(nibName: CellWall.reuseIdentifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: CellWall.reuseIdentifier)
-    }
-
+    let nib = UINib(nibName: PostTableViewCell.reuseIdentifier, bundle: nil)
+    tableView.register(nib, forCellReuseIdentifier: PostTableViewCell.reuseIdentifier)
+  }
+  
 }
 
+// MARK: -  Расширенные настройки
 extension TableWall {
+
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    260
+  }
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    photoItems.count
+  }
+  
+  //Настройка ячейки
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        200
-    }
+    let photoItem = photoItems[indexPath.row]
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        images.count
-    }
+    let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.reuseIdentifier, for: indexPath) as! PostTableViewCell
+    cell.photoItem = photoItem
+    cell.configure()
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellWall.reuseIdentifier, for: indexPath) as! CellWall
-        cell.configure(image: images[indexPath.row])
-        cell.onButtonTap = {
-            cell.isChosen.toggle()
-        }
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as? CellWall
-        
-        cell?.isChosen.toggle()
-    }
-    
-    
+    return cell
+  }
+  
 }

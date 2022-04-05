@@ -8,19 +8,19 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {  //Объявляем класс.
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        setupWindow()// делаем сетап переменной
+        setupWindow()// сетап основного окна
         return true
         
     }
     
     func setupWindow(){
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = TableWall() //Загружаем наш вьюконтролер
+        window?.rootViewController = TableWall() //Загрузка главного вьюконтролера
         window?.makeKeyAndVisible()
         
     }

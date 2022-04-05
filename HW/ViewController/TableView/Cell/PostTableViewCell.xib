@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="260" id="N0k-IG-zIc" userLabel="PostTableViewCell" customClass="PostTableViewCell" customModule="HW" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="436" height="261"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N0k-IG-zIc" id="jzb-jD-1KB">
+                <rect key="frame" x="0.0" y="0.0" width="436" height="261"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" minimumZoomScale="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HoF-iK-i8y">
+                        <rect key="frame" x="20" y="20" width="400" height="200"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="WLI-dV-F5n" userLabel="imageMain">
+                                <rect key="frame" x="8" y="0.0" width="418" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="WLI-dV-F5n" firstAttribute="top" secondItem="ibi-Gn-CNc" secondAttribute="top" id="OkR-yP-hrt"/>
+                            <constraint firstItem="ibi-Gn-CNc" firstAttribute="trailing" secondItem="WLI-dV-F5n" secondAttribute="trailing" id="U2i-p5-OL7"/>
+                            <constraint firstItem="WLI-dV-F5n" firstAttribute="leading" secondItem="ibi-Gn-CNc" secondAttribute="leading" constant="8" id="dyu-2Y-ZkE"/>
+                            <constraint firstAttribute="height" constant="200" id="vcU-gH-93P"/>
+                            <constraint firstItem="WLI-dV-F5n" firstAttribute="bottom" secondItem="ibi-Gn-CNc" secondAttribute="bottom" id="waz-u1-q8C"/>
+                        </constraints>
+                        <viewLayoutGuide key="contentLayoutGuide" id="Kwz-ga-c0I"/>
+                        <viewLayoutGuide key="frameLayoutGuide" id="ibi-Gn-CNc"/>
+                    </scrollView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THg-zG-5OH" userLabel="labelUser">
+                        <rect key="frame" x="20" y="0.0" width="82.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z7f-V9-Eit" customClass="HeartBezierView" customModule="HW" customModuleProvider="target">
+                        <rect key="frame" x="85" y="54" width="186" height="149"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="Filled" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="strokeWidth">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="filled" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fW-fS-sdo" userLabel="labelImage">
+                        <rect key="frame" x="20" y="221" width="26.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5T-q5-jGr">
+                        <rect key="frame" x="239" y="221" width="21" height="22"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="heart.fill" catalog="system">
+                            <color key="titleColor" systemColor="systemRedColor"/>
+                        </state>
+                        <connections>
+                            <action selector="buttomHeart:" destination="N0k-IG-zIc" eventType="touchUpInside" id="nGU-ud-sGt"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfI-ak-kyX" userLabel="labelCount">
+                        <rect key="frame" x="336" y="220" width="41.5" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="THg-zG-5OH" firstAttribute="top" secondItem="jzb-jD-1KB" secondAttribute="top" id="4Qu-It-2VP"/>
+                    <constraint firstItem="2fW-fS-sdo" firstAttribute="top" secondItem="jzb-jD-1KB" secondAttribute="bottom" constant="-40" id="Dvs-e1-xYx"/>
+                    <constraint firstAttribute="trailing" secondItem="HoF-iK-i8y" secondAttribute="trailing" constant="10" id="EBG-yn-Yr3"/>
+                    <constraint firstItem="v5T-q5-jGr" firstAttribute="top" secondItem="jzb-jD-1KB" secondAttribute="bottom" constant="-40" id="Lgp-Rk-V7n"/>
+                    <constraint firstItem="2fW-fS-sdo" firstAttribute="top" secondItem="HoF-iK-i8y" secondAttribute="bottom" constant="1" id="T7V-X4-5Rg"/>
+                    <constraint firstItem="HoF-iK-i8y" firstAttribute="leading" secondItem="jzb-jD-1KB" secondAttribute="leading" id="URj-UD-lpB"/>
+                    <constraint firstItem="HoF-iK-i8y" firstAttribute="top" secondItem="jzb-jD-1KB" secondAttribute="top" constant="20" id="WkD-iV-4sw"/>
+                    <constraint firstAttribute="leading" secondItem="v5T-q5-jGr" secondAttribute="trailing" constant="-260" id="YKz-Cr-aiG"/>
+                    <constraint firstItem="GfI-ak-kyX" firstAttribute="leading" secondItem="HoF-iK-i8y" secondAttribute="trailing" constant="-90" id="a25-Qg-1eS"/>
+                    <constraint firstItem="THg-zG-5OH" firstAttribute="leading" secondItem="jzb-jD-1KB" secondAttribute="leading" constant="20" symbolic="YES" id="kzB-D6-Mhd"/>
+                    <constraint firstItem="2fW-fS-sdo" firstAttribute="leading" secondItem="jzb-jD-1KB" secondAttribute="leadingMargin" id="oYS-Zg-RUJ"/>
+                    <constraint firstItem="GfI-ak-kyX" firstAttribute="top" secondItem="HoF-iK-i8y" secondAttribute="bottom" id="yZh-PH-VLI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageMain" destination="WLI-dV-F5n" id="AcH-Av-XNX"/>
+                <outlet property="labelCount" destination="GfI-ak-kyX" id="YYP-7C-K9T"/>
+                <outlet property="labelImage" destination="2fW-fS-sdo" id="dul-sj-UA4"/>
+                <outlet property="labelUser" destination="THg-zG-5OH" id="AIy-sJ-zrt"/>
+                <outlet property="scrollView" destination="HoF-iK-i8y" id="5V4-XH-SqF"/>
+                <outlet property="viewTap" destination="z7f-V9-Eit" id="uCT-fu-UDO"/>
+            </connections>
+            <point key="canvasLocation" x="-650.72463768115949" y="-432.92410714285711"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="1" width="1290" height="726"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
