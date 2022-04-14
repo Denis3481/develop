@@ -60,8 +60,8 @@
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5T-q5-jGr">
-                        <rect key="frame" x="239" y="221" width="21" height="22"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5T-q5-jGr">
+                        <rect key="frame" x="239" y="222" width="21" height="22"/>
                         <color key="tintColor" systemColor="systemRedColor"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="heart.fill" catalog="system">
@@ -82,6 +82,7 @@
                     <constraint firstItem="THg-zG-5OH" firstAttribute="top" secondItem="jzb-jD-1KB" secondAttribute="top" id="4Qu-It-2VP"/>
                     <constraint firstItem="2fW-fS-sdo" firstAttribute="top" secondItem="jzb-jD-1KB" secondAttribute="bottom" constant="-40" id="Dvs-e1-xYx"/>
                     <constraint firstAttribute="trailing" secondItem="HoF-iK-i8y" secondAttribute="trailing" constant="10" id="EBG-yn-Yr3"/>
+                    <constraint firstItem="GfI-ak-kyX" firstAttribute="leading" secondItem="v5T-q5-jGr" secondAttribute="trailing" constant="76" id="JXf-n2-6wD"/>
                     <constraint firstItem="v5T-q5-jGr" firstAttribute="top" secondItem="jzb-jD-1KB" secondAttribute="bottom" constant="-40" id="Lgp-Rk-V7n"/>
                     <constraint firstItem="2fW-fS-sdo" firstAttribute="top" secondItem="HoF-iK-i8y" secondAttribute="bottom" constant="1" id="T7V-X4-5Rg"/>
                     <constraint firstItem="HoF-iK-i8y" firstAttribute="leading" secondItem="jzb-jD-1KB" secondAttribute="leading" id="URj-UD-lpB"/>
